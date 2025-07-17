@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sri Lalitha Aqua offers innovative aquaculture solutions for enhanced productivity and sustainability.">
+  <meta name="keywords" content="aquaculture, aerators, gear boxes, motors, Sri Lalitha Aqua">
+  <meta name="author" content="Sri Lalitha Aqua">
+  <meta property="og:title" content="Sri Lalitha Aqua - Home">
+  <meta property="og:description" content="Explore innovative aquaculture solutions at Sri Lalitha Aqua.">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Sri+Lalitha+Aqua">
+  <meta property="og:url" content="https://www.srilalithaaqua.com">
+  <title>Sri Lalitha Aqua - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <style>
+    @keyframes flowIn {
+      0% { transform: translateY(100px) scale(0.9); opacity: 0; }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes wave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .animate-flow-in { animation: flowIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+    .animate-pulse { animation: pulse 2s ease-in-out infinite; }
+    .animate-wave { animation: wave 4s ease-in-out infinite; }
+    .organic-shape {
+      clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    .organic-shape:hover {
+      transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05);
+    }
+    .btn-ripple::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.8s linear;
+    }
+    .btn-ripple:hover::after {
+      animation: none;
+    }
+    .nav-circle {
+      clip-path: circle(0% at 100% 0);
+      transition: clip-path 0.5s ease-in-out;
+    }
+    .nav-circle.active {
+      clip-path: circle(100% at 100% 0);
+    }
+    .wave-divider {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0v27.35a600.21,600.21,0,0,0,321.39,29.09Z' fill='%231E3A8A'/%3E%3C/svg%3E") no-repeat center bottom;
+      background-size: cover;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="font-inter bg-gradient-to-b from-[#E0F2FE] to-[#F3F4F6] text-[#1E3A8A] min-h-screen overflow-x-hidden">
+  <header class="bg-gradient-to-r from-[#1E3A8A] to-[#38BDF8] text-white p-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center transform hover:scale-105 transition duration-300 animate-wave">
+     <img src="C:\sri-lalitha-aqua\assets\images\logo.png" alt="Sri Lalitha Aqua Logo" class="h-24">
+    </div>
+    <i class="fas fa-bars text-2xl cursor-pointer md:hidden hover:scale-110 transition duration-300" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false"></i>
+    <nav class="hidden md:flex items-center gap-4">
+      <a href="index.html" class="px-6 py-3 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple font-playfair">Home</a>
+      <a href="about.html" class="px-6 py-3 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple font-playfair">About Us</a>
+      <a href="products.html" class="px-6 py-3 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple font-playfair">Products</a>
+      <a href="dealer.html" class="px-6 py-3 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple font-playfair">Dealer Locator</a>
+      <a href="contact.html" class="px-6 py-3 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple font-playfair">Contact</a>
+    </nav>
+    <nav class="md:hidden fixed inset-0 bg-[#1E3A8A] p-6 z-50 nav-circle" id="mobileNav">
+      <i class="fas fa-times text-white text-2xl cursor-pointer hover:scale-110 transition duration-300 absolute top-6 right-6" onclick="toggleMenu()"></i>
+      <div class="flex flex-col gap-6 mt-16 items-center">
+        <a href="index.html" class="px-6 py-3 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300 font-playfair text-lg">Home</a>
+        <a href="about.html" class="px-6 py-3 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300 font-playfair text-lg">About Us</a>
+        <a href="products.html" class="px-6 py-3 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300 font-playfair text-lg">Products</a>
+        <a href="dealer.html" class="px-6 py-3 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300 font-playfair text-lg">Dealer Locator</a>
+        <a href="contact.html" class="px-6 py-3 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300 font-playfair text-lg">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="relative h-[80vh] bg-cover bg-center flex items-center justify-center text-center text-white overflow-hidden">
+    <canvas id="hero3D" class="absolute inset-0 z-0"></canvas>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#1E3A8A] to-transparent opacity-60 z-10"></div>
+    <div class="relative z-20 max-w-4xl p-8 animate-flow-in">
+      <h2 class="text-5xl md:text-7xl font-bold font-playfair mb-6 text-shadow-lg">Innovate. Sustain. Thrive.</h2>
+      <p class="text-xl md:text-3xl mb-8 font-inter">Premium aquaculture solutions for a healthier planet.</p>
+      <a href="products.html" class="inline-block px-10 py-4 bg-[#F59E0B] text-[#1E3A8A] rounded-full font-semibold text-lg font-playfair relative btn-ripple animate-pulse">Explore Now</a>
+    </div>
+    <div class="wave-divider z-20"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto p-8">
+    <section class="relative text-center animate-flow-in organic-shape glass-effect p-8">
+      <h2 class="text-4xl font-bold text-[#1E3A8A] mb-6 font-playfair">Our Commitment</h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto font-inter">Empowering aquaculture with innovative, eco-friendly solutions for maximum productivity and sustainability.</p>
+    </section>
+
+    <section class="relative mt-16">
+      <h2 class="text-center text-4xl font-bold text-[#1E3A8A] mb-12 font-playfair">Featured Products</h2>
+      <div class="relative flex flex-wrap justify-center gap-12">
+        <div class="relative w-80 glass-effect rounded-full p-8 organic-shape animate-flow-in z-10" style="transform: rotate(-3deg);">
+          <img src="C:\Users\SRI RAM\Pictures\AQUA\PREMIUM AREATOR.jpg" alt="Premium Aerator" class="w-full h-48 object-cover rounded-full animate-wave">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-[#1E3A8A] font-playfair">Premium Aerator</h3>
+            <p class="text-sm text-gray-700 font-inter">Maximize water oxygenation.</p>
+            <a href="products.html" class="block mt-4 px-8 py-3 bg-[#38BDF8] text-white rounded-full font-semibold font-playfair relative btn-ripple animate-pulse">Learn More</a>
+          </div>
+        </div>
+        <div class="relative w-80 glass-effect rounded-full p-8 organic-shape animate-flow-in z-20" style="transform: rotate(3deg) translateY(30px);">
+          <img src="C:\sri-lalitha-aqua\assets\images\lalitha-motor.jpg" alt="Lalitha Motor" class="w-full h-48 object-cover rounded-full animate-wave">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-[#1E3A8A] font-playfair">Lalitha Motor</h3>
+            <p class="text-sm text-gray-700 font-inter">Energy-efficient and reliable.</p>
+            <a href="products.html" class="block mt-4 px-8 py-3 bg-[#38BDF8] text-white rounded-full font-semibold font-playfair relative btn-ripple animate-pulse">Learn More</a>
+          </div>
+        </div>
+        <div class="relative w-80 glass-effect rounded-full p-8 organic-shape animate-flow-in z-30" style="transform: rotate(-2deg) translateY(60px);">
+          <img src="C:\Users\SRI RAM\Pictures\AQUA\Gishnu gear box.jpg" alt="Gishnu Gear Box" class="w-full h-48 object-cover rounded-full animate-wave">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-[#1E3A8A] font-playfair">Gishnu Gear Box</h3>
+            <p class="text-sm text-gray-700 font-inter">Seamless system performance.</p>
+            <a href="products.html" class="block mt-4 px-8 py-3 bg-[#38BDF8] text-white rounded-full font-semibold font-playfair relative btn-ripple animate-pulse">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="wave-divider"></div>
+    </section>
+  </div>
+
+  <footer class="bg-gradient-to-r from-[#1E3A8A] to-[#38BDF8] text-white p-8 relative">
+    
+    <div class="text-center mt-6 pt-6 border-t border-white border-opacity-20">
+      <p class="text-sm font-inter">© 2025 Sri Lalitha Aqua. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('active');
+      const hamburger = document.querySelector('.fa-bars');
+      hamburger.classList.toggle('fa-times');
+      hamburger.setAttribute('aria-expanded', nav.classList.contains('active'));
+    }
+
+    function handleNewsletter(event) {
+      event.preventDefault();
+      alert('Subscribed to newsletter!');
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-flow-in');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('section, .organic-shape').forEach(el => observer.observe(el));
+
+    // Enhanced hero 3D particle wave effect
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero3D'), alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCount = 1000;
+    const posArray = new Float32Array(particlesCount * 3);
+    for (let i = 0; i < particlesCount * 3; i += 3) {
+      posArray[i] = (Math.random() - 0.5) * 10;
+      posArray[i + 1] = (Math.random() - 0.5) * 10;
+      posArray[i + 2] = (Math.random() - 0.5) * 10;
+    }
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    const material = new THREE.PointsMaterial({
+      color: 0x38BDF8,
+      size: 0.05,
+      transparent: true,
+      opacity: 0.8
+    });
+    const particles = new THREE.Points(particlesGeometry, material);
+    scene.add(particles);
+    const light = new THREE.PointLight(0xffffff, 1, 100);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+    camera.position.z = 5;
+    function animateHero() {
+      requestAnimationFrame(animateHero);
+      const time = Date.now() * 0.001;
+      const positions = particlesGeometry.attributes.position.array;
+      for (let i = 0; i < positions.length; i += 3) {
+        positions[i + 1] = Math.sin(positions[i] + time) * 2;
+      }
+      particlesGeometry.attributes.position.needsUpdate = true;
+      particles.rotation.y += 0.001;
+      renderer.render(scene, camera);
+    }
+    animateHero();
+
+    // Swipe gesture for mobile
+    let touchstartX = 0;
+    let touchendX = 0;
+    document.addEventListener('touchstart', e => {
+      touchstartX = e.changedTouches[0].screenX;
+    });
+    document.addEventListener('touchend', e => {
+      touchendX = e.changedTouches[0].screenX;
+      if (touchendX < touchstartX - 50) {
+        document.querySelector('.organic-shape:nth-child(2)').scrollIntoView({ behavior: 'smooth' });
+      }
+      if (touchendX > touchstartX + 50) {
+        document.querySelector('.organic-shape:nth-child(1)').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>

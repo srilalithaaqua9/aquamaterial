@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Lalitha Aqua - Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    @keyframes flowIn {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .animate-flow-in { animation: flowIn 1.2s ease-out forwards; }
+    .organic-card {
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    .organic-card:hover {
+      transform: perspective(1000px) rotateX(3deg) rotateY(3deg) scale(1.1);
+    }
+    .btn-ripple::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 9999px;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+    }
+    .btn-ripple:hover::after {
+      animation: none;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      max-width: 20%; /* Fits within header */
+      height: auto;
+    }
+    .nav-slide-in {
+      clip-path: circle(0% at 100% 0);
+      transition: clip-path 0.5s ease-in-out;
+    }
+    .nav-slide-in.active {
+      clip-path: circle(100% at 100% 0);
+    }
+  </style>
+</head>
+<body class="font-inter bg-[#E0F2FE] text-[#1E3A8A] min-h-screen">
+  <header class="bg-gradient-to-r from-[#1E3A8A] to-[#38BDF8] text-white p-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center transform hover:scale-105 transition duration-300">
+      <img src="assets/images/logo.png" alt="Sri Lalitha Aqua Logo" class="logo">
+    </div>
+    <i class="fas fa-bars text-xl cursor-pointer md:hidden hover:rotate-90 transition duration-300" onclick="toggleMenu()"></i>
+    <nav class="hidden md:flex items-center gap-4">
+      <a href="index.html" class="px-4 py-2 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple">Home</a>
+      <a href="about.html" class="px-4 py-2 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple">About Us</a>
+      <a href="products.html" class="px-4 py-2 rounded-full text-white bg-[#F59E0B] text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple">Products</a>
+      <a href="dealer.html" class="px-4 py-2 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple">Dealer Locator</a>
+      <a href="contact.html" class="px-4 py-2 rounded-full text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] font-semibold transition duration-300 relative btn-ripple">Contact</a>
+    </nav>
+    <nav class="md:hidden fixed inset-y-0 right-0 w-3/4 bg-[#1E3A8A] p-6 z-50 nav-slide-in" id="mobileNav">
+      <i class="fas fa-times text-white text-2xl cursor-pointer hover:rotate-90 transition duration-300" onclick="toggleMenu()"></i>
+      <div class="flex flex-col gap-4 mt-6">
+        <a href="index.html" class="px-4 py-2 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300">Home</a>
+        <a href="about.html" class="px-4 py-2 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300">About Us</a>
+        <a href="products.html" class="px-4 py-2 text-white bg-[#F59E0B] text-[#1E3A8A] rounded-full font-semibold transition duration-300">Products</a>
+        <a href="dealer.html" class="px-4 py-2 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300">Dealer Locator</a>
+        <a href="contact.html" class="px-4 py-2 text-white hover:bg-[#F59E0B] hover:text-[#1E3A8A] rounded-full font-semibold transition duration-300">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="flex min-h-[calc(100vh-200px)]">
+    <aside class="w-64 p-6 bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] animate-flow-in">
+      <h3 class="text-lg font-semibold text-[#1E3A8A] mb-6">Categories</h3>
+      <ul class="space-y-2">
+        <li class="py-2 text-[#1E3A8A] hover:text-[#38BDF8] hover:font-semibold cursor-pointer transition duration-300">Premium Aerator</li>
+        <li class="py-2 text-[#1E3A8A] hover:text-[#38BDF8] hover:font-semibold cursor-pointer transition duration-300">Best Quality Aerator</li>
+        <li class="py-2 text-[#1E3A8A] hover:text-[#38BDF8] hover:font-semibold cursor-pointer transition duration-300">Gishnu Gear Box</li>
+        <li class="py-2 text-[#1E3A8A] hover:text-[#38BDF8] hover:font-semibold cursor-pointer transition duration-300">Lalitha Gear Box</li>
+        <li class="py-2 text-[#1E3A8A] hover:text-[#38BDF8] hover:font-semibold cursor-pointer transition duration-300">Lalitha Motor</li>
+        <li class="py-2 text-[#1E3A8A] hover:text-[#38BDF8] hover:font-semibold cursor-pointer transition duration-300">Jagannath Motor</li>
+        <li class="py-2 text-[#1E3A8A] hover:text-[#38BDF8] hover:font-semibold cursor-pointer transition duration-300">2 Peddle Aerator</li>
+      </ul>
+    </aside>
+
+    <section class="flex-1 p-6">
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="relative w-80 bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] rounded-full p-6 organic-card animate-flow-in" data-product="Premium Aerator" data-code="PA100" style="transform: rotate(-2deg);">
+          <img src="assets/images/premium-aerator.jpg" alt="Premium Aerator" class="w-full h-56 object-cover rounded-full">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-[#1E3A8A]">Premium Aerator</h3>
+            <p class="text-sm text-gray-700">Code: PA100</p>
+            <button class="inquiry-btn mt-4 px-6 py-3 bg-[#38BDF8] text-white rounded-full font-semibold relative btn-ripple">Add to Inquiry</button>
+          </div>
+        </div>
+        <div class="relative w-80 bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] rounded-full p-6 organic-card animate-flow-in" data-product="Best Quality Aerator" data-code="BQA200" style="transform: rotate(2deg) translateY(20px);">
+          <img src="assets/images/best-quality-aerator.jpg" alt="Best Quality Aerator" class="w-full h-56 object-cover rounded-full">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-[#1E3A8A]">Best Quality Aerator</h3>
+            <p class="text-sm text-gray-700">Code: BQA200</p>
+            <button class="inquiry-btn mt-4 px-6 py-3 bg-[#38BDF8] text-white rounded-full font-semibold relative btn-ripple">Add to Inquiry</button>
+          </div>
+        </div>
+        <div class="relative w-80 bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] rounded-full p-6 organic-card animate-flow-in" data-product="Gishnu Gear Box" data-code="GGB300" style="transform: rotate(-1deg) translateY(40px);">
+          <img src="assets/images/gishnu-gear-box.jpg" alt="Gishnu Gear Box" class="w-full h-56 object-cover rounded-full">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-[#1E3A8A]">Gishnu Gear Box</h3>
+            <p class="text-sm text-gray-700">Code: GGB300</p>
+            <button class="inquiry-btn mt-4 px-6 py-3 bg-[#38BDF8] text-white rounded-full font-semibold relative btn-ripple">Add to Inquiry</button>
+          </div>
+        </div>
+        <div class="relative w-80 bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] rounded-full p-6 organic-card animate-flow-in" data-product="Lalitha Gear Box" data-code="LGB400" style="transform: rotate(1deg);">
+          <img src="assets/images/lalitha-gear-box.jpg" alt="Lalitha Gear Box" class="w-full h-56 object-cover rounded-full">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-[#1E3A8A]">Lalitha Gear Box</h3>
+            <p class="text-sm text-gray-700">Code: LGB400</p>
+            <button class="inquiry-btn mt-4 px-6 py-3 bg-[#38BDF8] text-white rounded-full font-semibold relative btn-ripple">Add to Inquiry</button>
+          </div>
+        </div>
+        <div class="relative w-80 bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] rounded-full p-6 organic-card animate-flow-in" data-product="Lalitha Motor" data-code="LM500" style="transform: rotate(-2deg) translateY(20px);">
+          <img src="assets/images/lalitha-motor.jpg" alt="Lalitha Motor" class="w-full h-56 object-cover rounded-full">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-[#1E3A8A]">Lalitha Motor</h3>
+            <p class="text-sm text-gray-700">Code: LM500</p>
+            <button class="inquiry-btn mt-4 px-6 py-3 bg-[#38BDF8] text-white rounded-full font-semibold relative btn-ripple">Add to Inquiry</button>
+          </div>
+        </div>
+        <div class="relative w-80 bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] rounded-full p-6 organic-card animate-flow-in" data-product="Jagannath Motor" data-code="JM600" style="transform: rotate(2deg) translateY(40px);">
+          <img src="assets/images/jagannath-motor.jpg" alt="Jagannath Motor" class="w-full h-56 object-cover rounded-full">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-[#1E3A8A]">Jagannath Motor</h3>
+            <p class="text-sm text-gray-700">Code: JM600</p>
+            <button class="inquiry-btn mt-4 px-6 py-3 bg-[#38BDF8] text-white rounded-full font-semibold relative btn-ripple">Add to Inquiry</button>
+          </div>
+        </div>
+        <div class="relative w-80 bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] rounded-full p-6 organic-card animate-flow-in" data-product="2 Peddle Aerator" data-code="TPA700" style="transform: rotate(-1deg);">
+          <img src="assets/images/2-peddle-aerator.jpg" alt="2 Peddle Aerator" class="w-full h-56 object-cover rounded-full">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-[#1E3A8A]">2 Peddle Aerator</h3>
+            <p class="text-sm text-gray-700">Code: TPA700</p>
+            <button class="inquiry-btn mt-4 px-6 py-3 bg-[#38BDF8] text-white rounded-full font-semibold relative btn-ripple">Add to Inquiry</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center" id="inquiryModal">
+    <div class="bg-gradient-to-br from-[#F3F4F6] to-[#E0F2FE] p-8 rounded-3xl w-11/12 max-w-md transform scale-90 transition duration-500">
+      <i class="fas fa-times absolute top-4 right-4 text-xl cursor-pointer hover:rotate-90 transition duration-300" onclick="closeModal()"></i>
+      <h2 class="text-xl font-semibold text-[#1E3A8A] mb-6">Inquiry Form</h2>
+      <form id="inquiryForm" class="flex flex-col gap-4">
+        <input type="text" id="productName" name="product_name" readonly class="p-3 border-none rounded-full focus:ring-2 focus:ring-[#F59E0B]">
+        <input type="text" id="productCode" name="product_code" readonly class="p-3 border-none rounded-full focus:ring-2 focus:ring-[#F59E0B]">
+        <input type="text" id="name" name="name" placeholder="Your Name" required class="p-3 border-none rounded-full focus:ring-2 focus:ring-[#F59E0B]">
+        <input type="email" id="email" name="user_email" placeholder="Your Email" required class="p-3 border-none rounded-full focus:ring-2 focus:ring-[#F59E0B]">
+        <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number" required class="p-3 border-none rounded-full focus:ring-2 focus:ring-[#F59E0B]">
+        <textarea id="message" name="message" placeholder="Your Message" class="p-3 border-none rounded-md resize-y min-h-[100px] focus:ring-2 focus:ring-[#F59E0B]"></textarea>
+        <button type="submit" class="p-3 bg-[#38BDF8] text-white rounded-full font-semibold relative btn-ripple">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="bg-gradient-to-r from-[#1E3A8A] to-[#38BDF8] text-white p-8">
+    </div>
+    <div class="text-center mt-6 pt-6 border-t border-white border-opacity-20">
+      <p class="text-sm">© 2025 Sri Lalitha Aqua. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      emailjs.init("Eq5B6pSc4pd_GhXMM"); // EmailJS Public Key
+    })();
+
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('active');
+      const hamburger = document.querySelector('.fa-bars');
+      hamburger.classList.toggle('fa-times');
+    }
+
+    function handleNewsletter(event) {
+      event.preventDefault();
+      alert('Subscribed to newsletter!');
+    }
+
+    const modal = document.getElementById('inquiryModal');
+    const inquiryButtons = document.querySelectorAll('.inquiry-btn');
+    const inquiryForm = document.getElementById('inquiryForm');
+
+    inquiryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.organic-card');
+        const productName = card.getAttribute('data-product');
+        const productCode = card.getAttribute('data-code');
+        document.getElementById('productName').value = productName;
+        document.getElementById('productCode').value = productCode;
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.querySelector('div').classList.add('scale-100'), 10);
+      });
+    });
+
+    function closeModal() {
+      modal.querySelector('div').classList.remove('scale-100');
+      setTimeout(() => modal.classList.add('hidden'), 500);
+    }
+
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get current time in IST (Indian Standard Time)
+      const now = new Date();
+      const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+      const timeString = istTime.toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true,
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      });
+
+      // Get form data
+      const formData = {
+        product_name: document.getElementById('productName').value || 'Unknown Product',
+        product_code: document.getElementById('productCode').value || 'Unknown Code',
+        name: document.getElementById('name').value || 'Anonymous',
+        user_email: document.getElementById('email').value,
+        reply_to: document.getElementById('email').value, // Set reply-to to user's email
+        mobile: document.getElementById('mobile').value || 'Not Provided',
+        message: document.getElementById('message').value || 'No message provided',
+        time: timeString
+      };
+
+      // Log form data for debugging
+      console.log('Sending form data:', formData);
+
+      // Send email using EmailJS to info@srilalithaaqua.com (set in template)
+      emailjs.send('service_gbcchnn', 'template_oedfvs6', formData)
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Inquiry sent successfully!');
+          closeModal();
+          inquiryForm.reset();
+        }, (error) => {
+          console.error('FAILED...', error);
+          alert('Failed to send inquiry. Please try again.');
+        });
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-flow-in');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.organic-card').forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
